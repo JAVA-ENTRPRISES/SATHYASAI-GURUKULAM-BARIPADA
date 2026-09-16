@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Modern School Header</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: 0.3s;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0%;
+        height: 3px;
+        background: #12cf38;
+        border-radius: 20px;
+        transition: 0.3s;
+      }
+
+      .nav-link:hover {
+        color: #273c8f;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .nav-link.active {
+        color: #273c8f;
+        font-weight: 700;
+      }
+
+      .dropdown {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: 0.3s;
+      }
+
+      .group:hover .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =================== TOP BAR =================== -->
+
+    <div class="bg-[#273C8F] text-white">
+      <div
+        class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-sm"
+      >
+        <div class="flex items-center gap-6">
+          <span>
+            <i class="fa-solid fa-phone"></i>
+            +91 9439380922
+          </span>
+
+          <span>
+            <i class="fa-solid fa-envelope"></i>
+            srisathyasaigurukulamchitroda@gmail.com
+          </span>
+        </div>
+
+        <div class="hidden md:flex gap-4">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+          <a href="#"><i class="fab fa-instagram"></i></a>
+
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-lg">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between items-center px-4 py-4">
+          <!-- Logo -->
+
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="assets/images/logo.png" class="h-16" />
+
+            <div>
+              <h2 class="text-2xl font-bold text-[#273C8F]">Sri Sathyasai <br> Gurukulam</h2>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+
+          <nav class="hidden lg:flex items-center gap-8 font-semibold">
+            <a href="index.html" class="nav-link active"> Home </a>
+
+            <div class="relative group">
+              <a href="about.html" class="nav-link"> About </a>
+
+              <div
+                class="dropdown absolute top-full left-0 bg-white shadow-xl rounded-xl w-56 mt-5 overflow-hidden"
+              >
+                <a href="about.html" class="block px-5 py-3 hover:bg-blue-50">
+                  Vision
+                </a>
+
+                <a href="about.html" class="block px-5 py-3 hover:bg-blue-50">
+                  Mission
+                </a>
+
+                <a href="about.html" class="block px-5 py-3 hover:bg-blue-50">
+                  Principal Message
+                </a>
+
+                <a href="about.html" class="block px-5 py-3 hover:bg-blue-50">
+                  Infrastructure
+                </a>
+              </div>
+            </div>
+
+            <a href="admission.html" class="nav-link"> Admission </a>
+
+            <a href="academic.html" class="nav-link"> Academics </a>
+
+            <a href="facility.html" class="nav-link"> Facilities </a>
+
+            <a href="gallery.html" class="nav-link"> Gallery </a>
+
+            <a href="mandatory-disclosure.html" class="nav-link">
+              Mandatory Disclosure
+            </a>
+
+            <a href="contact.html" class="nav-link"> Contact </a>
+          </nav>
+
+          <!-- Right Side -->
+
+          <div class="hidden lg:flex items-center gap-4">
+            <a
+              href="#"
+              class="bg-[#12cf38] text-white px-6 py-3 rounded-full hover:bg-red-700 transition"
+            >
+              Apply Now
+            </a>
+          </div>
+
+          <!-- Mobile -->
+
+          <button
+            onclick="openMenu()"
+            class="lg:hidden text-3xl text-[#273C8F]"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+
+    <div
+      id="mobileMenu"
+      class="fixed top-0 right-0 w-72 h-full bg-white shadow-2xl translate-x-full transition duration-300 z-50"
+    >
+      <div class="flex justify-between items-center p-6 border-b">
+        <h3 class="font-bold text-xl text-[#273C8F]">Menu</h3>
+
+        <button onclick="closeMenu()">
+          <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+      </div>
+
+      <nav class="flex flex-col">
+        <a href="index.html" class="px-6 py-4 border-b hover:bg-blue-50">
+          Home
+        </a>
+
+        <a href="about.html" class="px-6 py-4 border-b hover:bg-blue-50">
+          About
+        </a>
+
+        <a href="admission.html" class="px-6 py-4 border-b hover:bg-blue-50">
+          Admission
+        </a>
+
+        <a href="academic.html" class="px-6 py-4 border-b hover:bg-blue-50">
+          Academics
+        </a>
+
+        <a href="facility.html" class="px-6 py-4 border-b hover:bg-blue-50">
+          Facilities
+        </a>
+
+        <a href="gallery.html" class="px-6 py-4 border-b hover:bg-blue-50">
+          Gallery
+        </a>
+
+        <a
+          href="mandatory-disclosure.html"
+          class="px-6 py-4 border-b hover:bg-blue-50"
+        >
+          Mandatory Disclosure
+        </a>
+
+        <a href="contact.html" class="px-6 py-4 border-b hover:bg-blue-50">
+          Contact
+        </a>
+
+        <a
+          href="#"
+          class="m-6 bg-[#E74C3C] text-center text-white py-3 rounded-full"
+        >
+          Apply Now
+        </a>
+      </nav>
+    </div>
+
+    <!-- Overlay -->
+
+    <div
+      id="overlay"
+      onclick="closeMenu()"
+      class="fixed inset-0 bg-black/50 hidden z-40"
+    ></div>
+
+    <script>
+      function openMenu() {
+        document
+          .getElementById("mobileMenu")
+          .classList.remove("translate-x-full");
+
+        document.getElementById("overlay").classList.remove("hidden");
+      }
+
+      function closeMenu() {
+        document.getElementById("mobileMenu").classList.add("translate-x-full");
+
+        document.getElementById("overlay").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
